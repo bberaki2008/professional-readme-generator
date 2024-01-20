@@ -2,7 +2,7 @@
 // If there is no license, returns an empty string
 
 function renderLicenseBadge(license) {
-  if(license.licenseBadge === "The Unlicense" || license.licenseBadge === null) return "";
+  if(license.license === "" || license.licenseBadge === null) return "";
   return `${license.licenseBadge}`;
 }
 
@@ -10,15 +10,16 @@ function renderLicenseBadge(license) {
 // If there is no license, returns an empty string
 
 function renderLicenseLink(license) {
-  if(license.licenseBadge === "The Unlicense" || license.licenseLink === null) return "";
-  return `${license.licenseLink}`;
+  if(license.license === "" || license.licenseLink === null) return "";
+  return `## License Link <a id="licenseLink"></a>
+    ${license.licenseLink}`;
 }
 
 //Creates a function that returns the license section of README
 // If there is no license, returns an empty string
 
 function renderLicenseSection(license) {
-  if(license.licenseBadge === "The Unlicense" || license.licenseSection === null) return "";
+  if(license.license === "" || license.licenseSection === null) return "";
   return `${license.licenseSection}`;
 }
 
@@ -52,10 +53,10 @@ function generateMarkdown(data) {
   ## Test Instructions <a id="testInstructions"></a>
   ${data.testInstructions}
 
-  ## Github Username<a id="githubUsername"></a>
-  <a>https://github.com/${data.githubUsername}</a>
+  ## Questions <a id="githubUsername"></a>
+  https://github.com/${data.githubUsername}
 
-  ## Can be reached <a id="email"></a>
+  ### How to reach me with additonal questions: <a id="email"></a>
   ${data.email}
 
   ## Laguages <a id="languages"></a>
@@ -64,10 +65,10 @@ function generateMarkdown(data) {
   ## License <a id="license"></a>
   ${data.license}
 
-  ## License Link <a id="licenseLink"></a>
   ${LicenseLink} 
 
-  ${LicenseSection} <a id="licenseSection"></a>`;
+  ${LicenseSection} <a id="licenseSection"></a>
+  Please refere to github ${data.license} license or to click the link above`;
 }
 
 module.exports = generateMarkdown;

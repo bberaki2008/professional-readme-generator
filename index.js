@@ -2,7 +2,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./assets/generateMarkdown');
-const renderLicenseLink = require('./assets/generateMarkdown');
 const fileName = "README.md";
 
 
@@ -86,14 +85,14 @@ const questions = [
         message: 'What is the license link?',
         name:'licenseLink',
         choices:[
-            "[Creative Commons Zero](http://creativecommons.org/publicdomain/zero/1.0/)<br>", 
-            "[GPL v3](https://www.gnu.org/licenses/gpl-3.0)<br>", 
-            "[IPL 1.0](https://opensource.org/licenses/IPL-1.0)<br>",
-            "[ISC ](https://opensource.org/licenses/ISC)<br>",
-            "[MIT ](https://opensource.org/licenses/MIT)<br>",
-            "[MPL 2.0](https://opensource.org/licenses/MPL-2.0)<br>", 
-            "[EPL 1.0](https://opensource.org/licenses/EPL-1.0)<br>", 
-            "[Unlicense ](http://unlicense.org/)<br>"
+            "http://creativecommons.org/publicdomain/zero/1.0/", 
+            "https://www.gnu.org/licenses/gpl-3.0", 
+            "https://opensource.org/licenses/IPL-1.0",
+            "https://opensource.org/licenses/ISC",
+            "https://opensource.org/licenses/MIT",
+            "https://opensource.org/licenses/MPL-2.0", 
+            "https://opensource.org/licenses/EPL-1.0", 
+            "http://unlicense.org/"
             ],
     },
     {
