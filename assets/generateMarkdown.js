@@ -52,7 +52,7 @@ function generateMarkdown(data) {
   ## Test Instructions <a id="testInstructions"></a>
   ${data.testInstructions}
 
-  ## GitHub Userid <a id="githubUserid"></a>
+  ## Github Username<a id="githubUsername"></a>
   <a>https://github.com/${data.githubUsername}</a>
 
   ## Can be reached <a id="email"></a>
