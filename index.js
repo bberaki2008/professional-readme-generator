@@ -2,6 +2,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./assets/generateMarkdown');
+const renderLicenseLink = require('./assets/generateMarkdown');
 const fileName = "README.md";
 
 
@@ -46,15 +47,20 @@ const questions = [
 
 
 // TODO: Create a function to write README file
-inquirer.prompt([...questions]).then(function writeToFile(data) {
-    const readMeContent = generateMarkdown(data);
-
-    fs.writeFile(fileName, readMeContent, (err) => err? console.log(err):console.log('Successfully created README.md!'));
-    });
-
+function writeToFile(fileName, questions) {
+    inquirer.prompt(questions).then((data) => {
+        const readMeContent = generateMarkdown(data);
+              //readMeContent += renderLicenseBadge(data);
+              console.log(readMeContent);
+        //const readMeContent1 = renderLicenseLink(data);
+        fs.writeFile(fileName, readMeContent, (err) => err? console.log(err):console.log('Successfully created README.md!'));
+        // fs.writeFile(fileName, readMeContent1, (err) => err? console.log(err):console.log('Successfully created README.md!'));
+    })
+}
 
 // TODO: Create a function to initialize app
 function init() {
+    writeToFile(fileName, questions);
 }
 
 // Function call to initialize app
