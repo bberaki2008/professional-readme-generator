@@ -5,8 +5,8 @@
 // }
 
 function renderLicenseBadge(license) {
-  if(license ==="no license") "";
-  return `${license.licenseBadge}`;
+  if(license.licenseBadge === "The Unlicense" || license.licenseBadge === null) return "";
+  return `# ${license.licenseBadge}\n\n`;
 }
 
 // TODO: Create a function that returns the license link
@@ -16,8 +16,8 @@ function renderLicenseBadge(license) {
 // }
 
 function renderLicenseLink(license) {
-  if(license ==="no license") "";
-  return `${license.licenseLink}`;
+  if(license.licenseBadge === "The Unlicense" || license.licenseLink === null) return "";
+  return `# Link to the license ${license.licenseLink}\n\n`;
 }
 
 // TODO: Create a function that returns the license section of README
@@ -27,19 +27,19 @@ function renderLicenseLink(license) {
 // }
 
 function renderLicenseSection(license) {
-  if(license ==="no license") "";
-  return `${license.licenseSection}`;
+  if(license.licenseBadge === "The Unlicense" || license.licenseSection === null) return "";
+  return `${license.licenseSection}\n\n`;
 }
 
 // TODO: Create a function to generate markdown for README
-// function generateMarkdown(data) {
-//   return `# ${data.title} \n # ${data.description} \n # ${data.installation} \n # ${data.usage} \n # ${data.credits}\n # ${data.siteLink} \n # ${data.screenshot}`;
-// }
 
 function generateMarkdown(data) {
-  return `# ${data.title}
 
-`;
+  return `# ${data.title}
+  \n`+
+  renderLicenseBadge(data) +
+  renderLicenseLink(data) +
+  renderLicenseSection(data);
 }
 
 module.exports = generateMarkdown;
