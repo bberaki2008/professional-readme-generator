@@ -24,50 +24,50 @@ function renderLicenseSection(license) {
 
 //Creates a function to generate markdown for README
 
-function generateMarkdown(data) {
 
+function generateMarkdown(data) {
+  // replaces "," with two "\s" and "\r" globally to get each content of the table of content in a new line
+  const table_content = data.tableContents.toString().replace(/,/g,'  \r');
   const licenseBadge = renderLicenseBadge(data);
   const LicenseLink = renderLicenseLink(data);
   const LicenseSection = renderLicenseSection(data);
 
-  return `# ${data.title} <a name="title"></a> ${licenseBadge} 
+  return `# ${data.title} <a id="title"></a> ${licenseBadge} <a id="licenseBadge"></a>
 
-  # Description <a name="description"></a>
+  ## Description <a id="description"></a>
   ${data.description}
 
-  # Table of Contents
-  [title](#title)
+  ## Table of Contents
+  ${table_content}
 
-  ${data.tableContents}
-
-  # Installation Instructions <a name="installationInstructions"></a>
+  ## Installation Instructions <a id="installationInstructions"></a>
   ${data.installationInstructions}
 
-  # Usage Information <a name="usage"></a>
+  ## Usage Information <a id="usage"></a>
   ${data.usage}
 
-  # Contribution Guidelines <a name="contribution"></a>
+  ## Contribution Guidelines <a id="contribution"></a>
   ${data.contribution}
 
-  # Test Instructions <a name="testInstructions"></a>
+  ## Test Instructions <a id="testInstructions"></a>
   ${data.testInstructions}
 
-  # GitHub Username <a name="githubUsername"></a>
+  ## GitHub Userid <a id="githubUserid"></a>
   <a>https://github.com/${data.githubUsername}</a>
 
-  # Can be reached <a name="email"></a>
+  ## Can be reached <a id="email"></a>
   ${data.email}
 
-  # Laguages <a name="languages"></a>
+  ## Laguages <a id="languages"></a>
   ${data.languages}
   
-  # License <a name="license"></a>
+  ## License <a id="license"></a>
   ${data.license}
 
-  # License Link <a name="licenseLink"></a>
+  ## License Link <a id="licenseLink"></a>
   ${LicenseLink} 
 
-  ${LicenseSection} <a name="licenseSection"></a>`;
+  ${LicenseSection} <a id="licenseSection"></a>`;
 }
 
 module.exports = generateMarkdown;
