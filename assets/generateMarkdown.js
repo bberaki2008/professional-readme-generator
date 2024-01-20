@@ -53,7 +53,7 @@ function generateMarkdown(data) {
   ${data.testInstructions}
 
   # GitHub Username <a name="githubUsername"></a>
-  https://github.com/${data.githubUsername}
+  <a>https://github.com/${data.githubUsername}</a>
 
   # Can be reached <a name="email"></a>
   ${data.email}
