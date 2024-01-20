@@ -19,7 +19,7 @@ function renderLicenseLink(license) {
 
 function renderLicenseSection(license) {
   if(license.licenseBadge === "The Unlicense" || license.licenseSection === null) return "";
-  return `${license.licenseSection}\n\n`;
+  return `${license.licenseSection}`;
 }
 
 //Creates a function to generate markdown for README
@@ -46,9 +46,6 @@ function generateMarkdown(data) {
   # Usage Information <a name="usage"></a>
   ${data.usage}
 
-  # License <a name="license"></a>
-  ${data.license}
-
   # Contribution Guidelines <a name="contribution"></a>
   ${data.contribution}
 
@@ -56,7 +53,7 @@ function generateMarkdown(data) {
   ${data.testInstructions}
 
   # GitHub Username <a name="githubUsername"></a>
-  ${data.githubUsername}
+  https://github.com/${data.githubUsername}
 
   # Can be reached <a name="email"></a>
   ${data.email}
@@ -64,6 +61,9 @@ function generateMarkdown(data) {
   # Laguages <a name="languages"></a>
   ${data.languages}
   
+  # License <a name="license"></a>
+  ${data.license}
+
   # License Link <a name="licenseLink"></a>
   ${LicenseLink} 
 
