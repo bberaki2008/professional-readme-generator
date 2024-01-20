@@ -1,45 +1,73 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-// function renderLicenseBadge(data) {
-//   return `${data.licenseBadge}? ## ${data.licenseBadge}: ""`;
-// }
+// Creates a function that returns a license badge based on which license is passed in
+// If there is no license, returns an empty string
 
 function renderLicenseBadge(license) {
   if(license.licenseBadge === "The Unlicense" || license.licenseBadge === null) return "";
-  return `# ${license.licenseBadge}\n\n`;
+  return `${license.licenseBadge}`;
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-// function renderLicenseLink(data) {
-//   return `${data.licenseLink}? ## ${data.licenseLink}: ""`;
-// }
+// Creates a function that returns the license link
+// If there is no license, returns an empty string
 
 function renderLicenseLink(license) {
   if(license.licenseBadge === "The Unlicense" || license.licenseLink === null) return "";
-  return `# Link to the license ${license.licenseLink}\n\n`;
+  return `${license.licenseLink}`;
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-// function renderLicenseSection(data) {
-//   return `${data.licenseSection}? ## ${data.licenseSection}: ""`;
-// }
+//Creates a function that returns the license section of README
+// If there is no license, returns an empty string
 
 function renderLicenseSection(license) {
   if(license.licenseBadge === "The Unlicense" || license.licenseSection === null) return "";
   return `${license.licenseSection}\n\n`;
 }
 
-// TODO: Create a function to generate markdown for README
+//Creates a function to generate markdown for README
 
 function generateMarkdown(data) {
 
-  return `# ${data.title}
-  \n`+
-  renderLicenseBadge(data) +
-  renderLicenseLink(data) +
-  renderLicenseSection(data);
+  const licenseBadge = renderLicenseBadge(data);
+  const LicenseLink = renderLicenseLink(data);
+  const LicenseSection = renderLicenseSection(data);
+
+  return `# ${data.title} <a name="title"></a> ${licenseBadge} 
+
+  # Description <a name="description"></a>
+  ${data.description}
+
+  # Table of Contents
+  [title](#title)
+
+  ${data.tableContents}
+
+  # Installation Instructions <a name="installationInstructions"></a>
+  ${data.installationInstructions}
+
+  # Usage Information <a name="usage"></a>
+  ${data.usage}
+
+  # License <a name="license"></a>
+  ${data.license}
+
+  # Contribution Guidelines <a name="contribution"></a>
+  ${data.contribution}
+
+  # Test Instructions <a name="testInstructions"></a>
+  ${data.testInstructions}
+
+  # GitHub Username <a name="githubUsername"></a>
+  ${data.githubUsername}
+
+  # Can be reached <a name="email"></a>
+  ${data.email}
+
+  # Laguages <a name="languages"></a>
+  ${data.languages}
+  
+  # License Link <a name="licenseLink"></a>
+  ${LicenseLink} 
+
+  ${LicenseSection} <a name="licenseSection"></a>`;
 }
 
 module.exports = generateMarkdown;
