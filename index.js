@@ -1,4 +1,4 @@
-// TODO: Include packages needed for this application
+// Import packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./assets/generateMarkdown');
@@ -6,23 +6,68 @@ const renderLicenseLink = require('./assets/generateMarkdown');
 const fileName = "README.md";
 
 
-// TODO: Create an array of questions for user input
+//Create an array of questions for user input
 const questions = [
     {
         type: 'input',
-        message: 'What is the title of the project?',
+        message: 'What the title of the project?',
         name: 'title'
     },
     {
         type: 'input',
         message: 'Project description',
-        name:'projectDescription'
+        name:'description'
     },
-        {
+    {
+        type: 'checkbox',
+        message: 'Table of Contents',
+        name:'tableContents',
+        choices:["title", "description", "installationInstructions", "usage",
+                "license","contribution", "testInstructions", "githubUsername",
+                "email", "languages", "licenseLink", "licenseSection", "licenseBadge"
+                ]
+    },
+    {
+        type: 'input',
+        message: 'Installation Instructions',
+        name:'installationInstructions'
+    },
+    {
+        type: 'input',
+        message: 'Usage Information',
+        name:'usage'
+    },
+    {
+        type: 'input',
+        message: 'License',
+        name:'license'
+    },
+    {
+        type: 'input',
+        message: 'Contribution Guidelines',
+        name:'contribution'
+    },
+    {
+        type: 'input',
+        message: 'Test Instructions',
+        name:'testInstructions'
+    },
+
+    {
+        type: 'input',
+        message: 'What is your github username',
+        name:'githubUsername'
+    },
+    {
+        type: 'input',
+        message: 'How to reach me with additional questions? OR email-address',
+        name:'email'
+    },  
+    {
         type: 'checkbox',
         message: 'What languages did use to create this project?',
         name:'languages',
-        choices:["HTML", "CSS", "JavaScript", "MySQL"]
+        choices:["HTML", "CSS", "JavaScript", "nodejs"]
     },
     {
         type: 'input',
@@ -46,19 +91,15 @@ const questions = [
 
 
 
-// TODO: Create a function to write README file
+// Creates a function to write README file
 function writeToFile(fileName, questions) {
     inquirer.prompt(questions).then((data) => {
         const readMeContent = generateMarkdown(data);
-              //readMeContent += renderLicenseBadge(data);
-              console.log(readMeContent);
-        //const readMeContent1 = renderLicenseLink(data);
         fs.writeFile(fileName, readMeContent, (err) => err? console.log(err):console.log('Successfully created README.md!'));
-        // fs.writeFile(fileName, readMeContent1, (err) => err? console.log(err):console.log('Successfully created README.md!'));
     })
 }
 
-// TODO: Create a function to initialize app
+//Creates a function to initialize app
 function init() {
     writeToFile(fileName, questions);
 }
