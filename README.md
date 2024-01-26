@@ -28,7 +28,7 @@
   N/A
 
   ## Test Instructions <a id="testInstructions"></a>
-  N/A
+  npm run test
 
   ## Questions <a id="githubUsername"></a>
   https://github.com/bereto2008
@@ -37,7 +37,7 @@
   bereto2008@gmail.com
 
   ## Laguages <a id="languages"></a>
-  HTML, CSS, JavaScript, nodejs
+  HTML, CSS, JavaScript, nodejs, Inquirer and Jest
   
   ## License <a id="license"></a>
   The MIT License

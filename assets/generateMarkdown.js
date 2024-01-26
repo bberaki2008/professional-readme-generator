@@ -35,10 +35,10 @@ function generateMarkdown(data) {
 
   return `# ${data.title} <a id="title"></a> ${licenseBadge} <a id="licenseBadge"></a>
 
-  ## Description <a id="description"></a>
+  ### Description <a id="description"></a>
   ${data.description}
 
-  ## Table of Contents
+  ### Table of Contents
   ${table_content}
 
   ## Installation Instructions <a id="installationInstructions"></a>
