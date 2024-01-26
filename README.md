@@ -1,4 +1,4 @@
-# Professional README Generator <a id="title"></a> [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) <a id="licenseBadge"></a>
+# Professional README Generator <a id="title"></a> [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) <a id="license-badge"></a>
 
 ## Description <a id="description"></a>
 
@@ -16,7 +16,7 @@ This is a professional README generator for developers. It can quickly create a 
 - [Can be reached at](#email)
 - [Laguages](#languages)
 - [License](#license)
-- [License Link](#licenseLink)
+- [License Link](#license-link)
 - [License Section](#license-section)
 - [License Badge](#license-badge)
 
