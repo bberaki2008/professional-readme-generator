@@ -8,19 +8,19 @@ This is a professional README generator for developers. It can quickly create a 
 
 - [Title](#title)
 - [Description](#description)
-- [Installation Instructions](#installationInstructions)
+- [Installation Instructions](#installation-instructions)
 - [Usage Information](#usage)
 - [Contribution Guidelines](#contribution)
-- [Test Instructions](#testInstructions)
-- [GitHub Username](#githubUsername)
+- [Test Instructions](#test-instructions)
+- [GitHub Username](#github-username)
 - [Can be reached at](#email)
 - [Laguages](#languages)
 - [License](#license)
 - [License Link](#licenseLink)
-- [License Section](#licenseSection)
-- [License Badge](#licenseBadge)
+- [License Section](#license-section)
+- [License Badge](#license-badge)
 
-## Installation Instructions <a id="installationInstructions"></a>
+## Installation Instructions <a id="installation-instructions"></a>
 
 npm install --save
 
@@ -32,11 +32,11 @@ WHEN I enter my project title THEN this is displayed as the title of the README 
 
 N/A
 
-## Test Instructions <a id="testInstructions"></a>
+## Test Instructions <a id="test-instructions"></a>
 
 npm run test
 
-## Questions <a id="githubUsername"></a>
+## Questions <a id="github-username"></a>
 
 https://github.com/bereto2008
 
@@ -52,11 +52,11 @@ HTML, CSS, JavaScript, nodejs, Inquirer and Jest
 
 The MIT License
 
-## License Link <a id="licenseLink"></a>
+## License Link <a id="license-link"></a>
 
 https://opensource.org/licenses/MIT
 
-<a id="licenseSection"></a>
+<a id="license-section"></a>
 Please refere to github The MIT License license or to click the link above
 
 ## Link to the Video
